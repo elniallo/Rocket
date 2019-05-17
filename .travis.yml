@@ -1,7 +1,16 @@
+os: 
+  - osx
+  - linux
+  - windows
 language: rust
 sudo: required # so we get a VM with higher specs
 dist: trusty # so we get a VM with higher specs
 cache: cargo
+before_install: 
+- |
+  if ["$TRAVIS_OS_NAME" == "windows"]; then
+    choco install mysql-connector
+  fi
 env:
   - TEST_FLAGS=
   - TEST_FLAGS=--release
