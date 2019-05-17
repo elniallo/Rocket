@@ -10,7 +10,6 @@ before_install:
 - |
   if ["$TRAVIS_OS_NAME" == "windows"]; then
     choco install mysql-connector
-  fi
 env:
   - $TEST_FLAGS=
 rust:
