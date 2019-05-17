@@ -12,10 +12,7 @@ before_install:
     choco install mysql-connector
   fi
 env:
-  - TEST_FLAGS=
-  - TEST_FLAGS=--release
-  - TEST_FLAGS=--contrib
-  - TEST_FLAGS=--core
+  - $TEST_FLAGS=
 rust:
   - nightly
 script: ./scripts/test.sh $TEST_FLAGS
